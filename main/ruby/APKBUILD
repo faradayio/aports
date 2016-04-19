@@ -1,11 +1,11 @@
 # Contributor: Carlo Landmeter <clandmeter@gmail.com>
 # Maintainer: Natanael Copa <ncopa@alpinelinux.org>
 pkgname=ruby
-pkgver=2.2.4
+pkgver=2.3.0
 _pkgver=${pkgver/_/-}
 pkgrel=0
 
-_abi=2.2.0
+_abi=2.3.0
 
 pkgdesc="An object-oriented language for quick and easy programming"
 url="http://www.ruby-lang.org/en/"
@@ -14,7 +14,7 @@ license="Ruby"
 depends=""
 depends_dev="gmp-dev"
 makedepends="$depends_dev zlib-dev openssl-dev gdbm-dev db-dev libedit-dev
-	libffi-dev coreutils yaml-dev autoconf"
+	libffi-dev coreutils yaml-dev autoconf linux-headers"
 subpackages="$pkgname-doc $pkgname-dev $pkgname-irb
 	$pkgname-rdoc $pkgname-rake $pkgname-bigdecimal
 	$pkgname-io-console:io_console $pkgname-minitest
@@ -198,6 +198,6 @@ libs() {
 	mv "$pkgdir"/usr/lib "$subpkgdir"/usr/
 }
 
-md5sums="c3d65f6d2ebe90dda81a37885ea244f5  ruby-2.2.4.tar.bz2"
-sha256sums="31203696adbfdda6f2874a2de31f7c5a1f3bcb6628f4d1a241de21b158cd5c76  ruby-2.2.4.tar.bz2"
-sha512sums="d27ca2f19c214ce87f906b57edd41f2f8af35b2871c191470facded9cfda15ba46e5c3bc7d5540225a38da6bd65050fcc8aaa4ffbadbb6bf7dc891c1821da0df  ruby-2.2.4.tar.bz2"
+md5sums="f0d9f9bbdc87372ca98988a571875819  ruby-2.3.0.tar.bz2"
+sha256sums="ec7579eaba2e4c402a089dbc86c98e5f1f62507880fd800b9b34ca30166bfa5e  ruby-2.3.0.tar.bz2"
+sha512sums="77b707359e754c3616699d21697752741497c719dc3d6fdfb55ed639e76d52560d293ae54cbe5c63be78dc73fbe60f1b8615d704d017bdfe1994aa9747d26a6c  ruby-2.3.0.tar.bz2"
