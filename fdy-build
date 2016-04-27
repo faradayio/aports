@@ -6,7 +6,7 @@
 set -euo pipefail
 
 # These are the packages we build by default.
-DEFAULT_PACKAGES="main/ruby testing/geos"
+DEFAULT_PACKAGES="main/ruby testing/geos testing/credentials-to-env"
 
 # To only build a specific list of packages, pass -e PACKAGES="..." to
 # Docker.

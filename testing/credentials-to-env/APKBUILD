@@ -1,0 +1,29 @@
+# Contributor: Faraday Alpine Maintainers <alpine@faraday.io>
+# Maintainer:
+pkgname=credentials-to-env
+pkgver=0.4.1
+pkgrel=0
+pkgdesc="Downloads credentials from Hashicorp's Vault, and writes them to env vars and/or files before executing another process."
+url="https://github.com/faradayio/credentials_to_env"
+arch="x86_64"
+license="MIT"
+depends=""
+makedepends=""
+install=""
+# Add back if we include a license file.
+#subpackages="$pkgname-doc"
+source="https://github.com/faradayio/credentials_to_env/releases/download/v$pkgver/credentials-to-env-v$pkgver-linux-x86_64.zip"
+
+builddir="$srcdir"
+build() {
+	cd "$builddir"
+}
+
+package() {
+	cd "$builddir"
+	install -Dm555 credentials-to-env "$pkgdir"/usr/bin/credentials-to-env
+}
+
+md5sums="697eaad6b1f2acc0bbf54d7d2748db33  credentials-to-env-v0.4.1-linux-x86_64.zip"
+sha256sums="8075378eee6ef884ddef4132cdf242f1ea57eea850aa6f17545fa598c83994b0  credentials-to-env-v0.4.1-linux-x86_64.zip"
+sha512sums="5e90784b81284518b74be44cd90a30411bd19ad511fe02a5916d7232e23c89c438084a61d9bcc1547a46e7f8ef99ba207be4e0cd9c820976521f88cfe881280a  credentials-to-env-v0.4.1-linux-x86_64.zip"
