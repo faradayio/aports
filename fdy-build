@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# Run inside our Docker container to build those images which interest us.
+
+# Standard paranoia.
+set -euo pipefail
+
+# These are the packages we build by default.
+DEFAULT_PACKAGES="main/ruby testing/geos"
+
+# To only build a specific list of packages, pass -e PACKAGES="..." to
+# Docker.
+PACKAGES=${PACKAGES:-$DEFAULT_PACKAGES}
+
+# Download fresh package lists at runtime.
+sudo apk update
+
+# Build our individual packages, using "-r" to recursively install and
+# uninstall packages as needed, which prevents pulling in undesired
+# dependencies by accident.
+for P in $PACKAGES; do
+    echo "===== Building package $P"
+    (cd $P && abuild -r)
+done
+
+# If we were asked to do so, upload the packages that we just built.
+if [ -z ${UPLOAD_PACKAGES+x} ]; then
+    echo "Skipping package upload; set UPLOAD_PACKAGES=1 to run."
+else
+    # We don't install the uploaded tools until after the builds are done,
+    # because we want a very minimal, clean system for building packages,
+    # and these pull in a pretty complete Python environment.
+    echo "Preparing to upload packages"
+    sudo apk add py-pip
+    sudo pip install awscli
+
+    echo "Uploading packages"
+    aws s3 sync /home/aports/packages s3://fdy-alpine-packages/
+fi
