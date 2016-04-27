@@ -15,6 +15,7 @@ PACKAGES=${PACKAGES:-$DEFAULT_PACKAGES}
 # Make sure that all our public keys are also available to the system as a whole,
 # because we'll need them to update APKINDEX.tar.gz.
 sudo cp /home/aports/.abuild/*.pub /etc/apk/keys/
+sudo chmod a+r /etc/apk/keys/*.pub
 
 # Download fresh package lists at runtime.
 sudo apk update
