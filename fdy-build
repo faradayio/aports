@@ -12,6 +12,10 @@ DEFAULT_PACKAGES="main/ruby testing/geos testing/credentials-to-env"
 # Docker.
 PACKAGES=${PACKAGES:-$DEFAULT_PACKAGES}
 
+# Make sure that all our public keys are also available to the system as a whole,
+# because we'll need them to update APKINDEX.tar.gz.
+sudo cp /home/aports/.abuild/*.pub /etc/apk/keys/
+
 # Download fresh package lists at runtime.
 sudo apk update
 
