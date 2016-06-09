@@ -9,7 +9,7 @@
 #     cd testing/mypackage
 #     abuild -r
 
-FROM alpine:edge
+FROM alpine:3.4
 
 # Change this if you need to change the signing key.
 ENV PACKAGER_KEY=alpine@faraday.io-571f7fdf.rsa
