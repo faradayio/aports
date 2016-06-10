@@ -1,8 +1,9 @@
 # Contributor: Mari Hahn <mari.hahn@wwu.de>
 # Contributor: Sören Tempel <soeren+alpine@soeren-tempel.net>
-# Maintainer:
+# Maintainer: Francesco Colista <fcolista@alpinelinux.org>
 pkgname=tint2
-pkgver=0.12.6
+pkgver=0.12.11
+_gitver=5a5d8fd9784b3ceac5b51954099c686660ad1cde
 pkgrel=0
 pkgdesc="tint2 is a simple unintrusive panel/taskbar"
 url="https://gitlab.com/o9000/tint2"
@@ -10,16 +11,14 @@ arch="all"
 license="GPL2"
 depends="imlib2 glib pango cairo libxcomposite libxdamage
 	libxinerama libxrandr gtk+"
-depends_dev="cmake imlib2-dev glib-dev pango-dev cairo-dev
-	libxcomposite-dev libxdamage-dev libxinerama-dev libxrandr-dev
-	gtk+-dev librsvg-dev startup-notification-dev linux-headers"
-makedepends="$depends_dev"
+depends_dev=""
+makedepends="$depends_dev cmake imlib2-dev glib-dev pango-dev cairo-dev
+    libxcomposite-dev libxdamage-dev libxinerama-dev libxrandr-dev
+    gtk+-dev librsvg-dev startup-notification-dev linux-headers"
 install=""
-subpackages="$pkgname-doc"
-source="$pkgname-$pkgver.tar.gz::https://gitlab.com/o9000/${pkgname}/repository/archive.tar.gz?ref=${pkgver}
-	musl-fixes.patch"
-
-_builddir="$srcdir"/$pkgname-$pkgver-117ffb2bfda625b44d4c833f882b727eddeb6add
+subpackages="$pkgname-doc $pkgname-lang"
+source="$pkgname-$pkgver.tar.gz::https://gitlab.com/o9000/${pkgname}/repository/archive.tar.gz?ref=${pkgver}"
+_builddir="$srcdir"/$pkgname-$pkgver-$_gitver
 prepare() {
 	local i
 	cd "$_builddir"
@@ -48,9 +47,6 @@ package() {
 	make DESTDIR="${pkgdir}" install || return 1
 }
 
-md5sums="f46484d777640965f4deaa36e5b27306  tint2-0.12.6.tar.gz
-cfbb1a843981f796e7c50b510b167844  musl-fixes.patch"
-sha256sums="7f40cf36f0e579b9d81651aff09e470b4cbae496accc905e91cdda1fdaf57e9f  tint2-0.12.6.tar.gz
-03d4ae8516d59fc58d992b5b134c8cae11bf74b55b52832063dd684694bec696  musl-fixes.patch"
-sha512sums="7e8a476163ccd2902acb53db361af1739f047ba41d72f22c7836856126e6ed17ac62f06bb2f62a93642979f1b916b6b99d72e64a1b73e24fc53bca4dfc3c8016  tint2-0.12.6.tar.gz
-6dc60882cadcc3b5acb9b12cd894024daef9be9854716826b74977d5c476fd0c0ddafe11a2ed18f4368a73e2c53f3bd97cadace350a04de7d81a7ee52d4809be  musl-fixes.patch"
+md5sums="4b76b0b786ad4fd931dd3e734d809c7a  tint2-0.12.11.tar.gz"
+sha256sums="50d019a61cb0b9f81a76e727e17d31b6ff9db34a9f71cb2d65ce4225a4fa6737  tint2-0.12.11.tar.gz"
+sha512sums="0737b4c856882e0067dea9084de006ee3ccb71f8d3d4e0d2cc2c7c86331f26d89cd715cfbeb8e9a2cad2301552f65fc6917f1d16ef5aa79b9bafe976b6f105e8  tint2-0.12.11.tar.gz"

@@ -1,0 +1,26 @@
+# Contributor: Jakub Jirutka <jakub@jirutka.cz>
+# Maintainer: Jakub Jirutka <jakub@jirutka.cz>
+pkgname=qemu-openrc
+pkgver=0.4.0
+pkgrel=0
+pkgdesc="OpenRC init scripts for QEMU/KVM"
+url="https://github.com/jirutka/qemu-openrc"
+arch="noarch"
+license="MIT"
+depends="qemu socat"
+makedepends=""
+source="$pkgname-$pkgver.tar.gz::https://github.com/jirutka/$pkgname/archive/v$pkgver.tar.gz"
+builddir="$srcdir/$pkgname-$pkgver"
+
+build() {
+	return 0
+}
+
+package() {
+	cd "$builddir"
+	PREFIX="/usr" DESTDIR="$pkgdir" ./install 
+}
+
+md5sums="9f86155bca683eeba75686ce2563ed94  qemu-openrc-0.4.0.tar.gz"
+sha256sums="3ad2c17ac1d0d3504ee3434a2c4e1db0db7100067524275c9310e431997175f4  qemu-openrc-0.4.0.tar.gz"
+sha512sums="d52b7b7d51864212f43b8bd961bfd46ebbafc6e456c42450d8e596154e1deee78146feb5f0860d179daa13caef13b105d2df537f9cf48d152fda7d7f97857156  qemu-openrc-0.4.0.tar.gz"

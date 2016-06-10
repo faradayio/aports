@@ -1,0 +1,28 @@
+# Contributor: Stefan Wagner <stw@bit-strickerei.de>
+# Maintainer: Stefan Wagner <stw@bit-strickerei.de>
+pkgname=notmuch
+pkgver=0.22
+pkgrel=0
+pkgdesc="E-Mail index, search and tagging"
+url="https://notmuchmail.org/"
+arch="all"
+license="GPL3"
+makedepends="gzip xapian-core-dev gmime-dev talloc-dev py-sphinx"
+subpackages="$pkgname-dev $pkgname-doc"
+source="https://notmuchmail.org/releases/$pkgname-$pkgver.tar.gz"
+
+builddir="$srcdir/$pkgname-$pkgver"
+build() {
+	cd "$builddir"
+	./configure --prefix=/usr || return 1
+	make PREFIX=/usr DESTDIR="$pkgdir"
+}
+
+package() {
+	cd "$builddir"
+	make PREFIX=/usr DESTDIR="$pkgdir" install
+}
+
+md5sums="d4f604b82eeed216ed0cf14814b56d14  notmuch-0.22.tar.gz"
+sha256sums="d64118ef926ba06fba814a89a75d20b0c8c8ec07dd65e41bb9f1e9db0dcfb99a  notmuch-0.22.tar.gz"
+sha512sums="0fd3860b4bce0fbf2648046a68b92d23d73604e82e05ee1b5913fc82985e67225b0f3a0977f71ad5251e7714a7111e8fd84ae0347f33475dddd8eb8d00fd2ed6  notmuch-0.22.tar.gz"

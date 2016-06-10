@@ -1,13 +1,13 @@
 # Contributor: Francesco Colista <fcolista@alpinelinux.org>
 # Maintainer: Francesco Colista <fcolista@alpinelinux.org>
 pkgname=byobu
-pkgver=5.106
-pkgrel=0
+pkgver=5.108
+pkgrel=1
 pkgdesc="An enhancement of the GNU Screen"
 url="https://launchpad.net/byobu"
 arch="noarch"
 license="GPL3"
-depends="screen python"
+depends="screen python tmux"
 makedepends=""
 install=""
 subpackages="$pkgname-doc"
@@ -31,6 +31,6 @@ package() {
 	make DESTDIR="$pkgdir" install
 }
 
-md5sums="702803d8f4717b96b6881e3128b7bbc2  byobu_5.106.orig.tar.gz"
-sha256sums="e22bf8e680db322d21a9df4114620622f340c5fa0e3149698df39598c4779148  byobu_5.106.orig.tar.gz"
-sha512sums="a100fc633d476489c64ea3e778a1c8bdeb6c89b061841b63856968c79c4a9ffb325d14877a2e399acf5afb8a4d880ad32a710732688b2a04a1cfe27b1f00f62b  byobu_5.106.orig.tar.gz"
+md5sums="44316c7db6ce6eb62de9506d57d750f4  byobu_5.108.orig.tar.gz"
+sha256sums="a8ad1e99b32dbafcd1cb6a58b6541ea177850567d504218af08ffac79a01e39e  byobu_5.108.orig.tar.gz"
+sha512sums="ff592ed1be69f53a3a6dc4038d811d013930d5ac0997d5d88f636d3a039180f602bb060cac40e51d1180252a64b4815f407ab144c1837c448f861306ac7ae9ad  byobu_5.108.orig.tar.gz"

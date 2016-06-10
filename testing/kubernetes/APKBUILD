@@ -1,0 +1,45 @@
+# Contributor: Francesco Colista <fcolista@alpinelinux.org>
+# Maintainer: Francesco Colista <fcolista@alpinelinux.org>
+pkgname=kubernetes
+pkgver=1.2.4
+pkgrel=0
+pkgdesc="Container Cluster Manager for Docker"
+url="http://kubernetes.io/"
+arch="x86_64"
+license="APACHE"
+depends="bash"
+depends_dev=""
+makedepends="$depends_dev go rsync bash linux-headers"
+install=""
+subpackages="$pkgname-bash-completion:bashcomp"
+source="$pkgname-$pkgver.tar.gz::https://github.com/GoogleCloudPlatform/$pkgname/archive/v$pkgver.tar.gz"
+builddir="$srcdir"/$pkgname-$pkgver
+
+build() {
+	cd "$builddir"
+	export GOPATH="$srcdir"
+	bash ./hack/build-go.sh
+}
+
+package() {
+	cd "$builddir"
+	binaries="kube-apiserver kube-controller-manager kube-scheduler kube-proxy kubelet kubectl kubemark hyperkube"
+	for bin in $binaries ; do
+    	install -Dm755 _output/local/bin/linux/amd64/$bin $pkgdir/usr/bin/$bin
+    done
+}
+
+bashcomp() {
+    depends="bash"
+    pkgdesc="Bash completions for $pkgname"
+    arch="noarch"
+    cd "$builddir"
+    mkdir -p "$subpkgdir"/usr/share/bash-completion/completions
+	mv "$builddir"/contrib/completions/bash/kubectl "$subpkgdir"/usr/share/bash-completion/completions/kubectl
+}
+
+
+
+md5sums="1bb19f8400ae1e224c710d8e0a8579a1  kubernetes-1.2.4.tar.gz"
+sha256sums="20a3984f9c044f1a1da3088166b181f3c10380d3efd4bf3fbc64678fef279ced  kubernetes-1.2.4.tar.gz"
+sha512sums="b12795c095f6918390fe018d291111e8588360f3f86685caf5d1e563ce9229298b39ab1c211213633b36f5e8b7e71e5bb5beb5e8a83e388be3418a59afd30725  kubernetes-1.2.4.tar.gz"

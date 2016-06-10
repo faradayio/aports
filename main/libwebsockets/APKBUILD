@@ -1,7 +1,7 @@
 # Contributor: V.Krishn <vkrishn4@gmail.com>
 # Maintainer: Natanael Copa <ncopa@alpinelinux.org>
 pkgname=libwebsockets
-pkgver=1.7.5
+pkgver=2.0.1
 pkgrel=0
 pkgdesc="C library for lightweight websocket clients and servers"
 url="http://libwebsockets.org"
@@ -52,6 +52,6 @@ _test() {
 }
 
 
-md5sums="ad6d3926dee9ed6a86786d5048913258  libwebsockets-1.7.5.tar.gz"
-sha256sums="e91f59fb6238462b4ffdfef2482239558b8a02198c9c6076eb3f86eb1c4e935d  libwebsockets-1.7.5.tar.gz"
-sha512sums="2e056d94526d8c613ffb6e5e1aeca83a185a231af7e48994e94502346f558442eef3a247cd1bef32c6bcdf8e386ff281fe86307478dd2f9809e4ac4bafeccb79  libwebsockets-1.7.5.tar.gz"
+md5sums="4963d1b7a66ad90ce3ea7be971162073  libwebsockets-2.0.1.tar.gz"
+sha256sums="f98cf9e35385863cfe64a5f181403bf3113cc5d82604c4811e1373ba8676ef88  libwebsockets-2.0.1.tar.gz"
+sha512sums="90a4ee45753cfca67a6093ce8ef9b3eb9dffdcd213888555d29fe09d8fdf36a6e927d121bc0cc0cd12570b2d48952501b0639e95614bf356419f6eb53cb3819d  libwebsockets-2.0.1.tar.gz"

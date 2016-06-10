@@ -1,7 +1,7 @@
 # Contributor: Carlo Landmeter <clandmeter@gmail.com>
 # Maintainer: Natanael Copa <ncopa@alpinelinux.org>
 pkgname=ruby
-pkgver=2.3.0
+pkgver=2.3.1
 _pkgver=${pkgver/_/-}
 pkgrel=0
 
@@ -14,7 +14,7 @@ license="Ruby"
 depends=""
 depends_dev="gmp-dev"
 makedepends="$depends_dev zlib-dev openssl-dev gdbm-dev db-dev libedit-dev
-	libffi-dev coreutils yaml-dev autoconf linux-headers"
+	libffi-dev coreutils yaml-dev linux-headers autoconf"
 subpackages="$pkgname-doc $pkgname-dev $pkgname-irb
 	$pkgname-rdoc $pkgname-rake $pkgname-bigdecimal
 	$pkgname-io-console:io_console $pkgname-minitest
@@ -198,6 +198,6 @@ libs() {
 	mv "$pkgdir"/usr/lib "$subpkgdir"/usr/
 }
 
-md5sums="f0d9f9bbdc87372ca98988a571875819  ruby-2.3.0.tar.bz2"
-sha256sums="ec7579eaba2e4c402a089dbc86c98e5f1f62507880fd800b9b34ca30166bfa5e  ruby-2.3.0.tar.bz2"
-sha512sums="77b707359e754c3616699d21697752741497c719dc3d6fdfb55ed639e76d52560d293ae54cbe5c63be78dc73fbe60f1b8615d704d017bdfe1994aa9747d26a6c  ruby-2.3.0.tar.bz2"
+md5sums="c194281f63d7fcd816747fe78474be5e  ruby-2.3.1.tar.bz2"
+sha256sums="4a7c5f52f205203ea0328ca8e1963a7a88cf1f7f0e246f857d595b209eac0a4d  ruby-2.3.1.tar.bz2"
+sha512sums="a8659b96a3a481a3dbdbb6997eb18ff1f8cd926a9707a90d071e937315c21d372c89252f0d44732ae5007d2678fda8c8fbceafa4e4b4ff500d236fb796284d8d  ruby-2.3.1.tar.bz2"

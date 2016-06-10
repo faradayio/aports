@@ -1,7 +1,7 @@
 # Maintainer: Marlus Saraiva <marlus.saraiva@gmail.com>
 
 pkgname=elixir
-pkgver=1.2.4
+pkgver=1.2.6
 pkgrel=0
 pkgdesc="Elixir is a dynamic, functional language designed for building scalable and maintainable applications"
 url="http://elixir-lang.org"
@@ -35,6 +35,6 @@ package() {
 	make DESTDIR="$pkgdir" PREFIX=/usr install || return 1
 }
 
-md5sums="8eb7e75c4639c0a1fc9ac1d570513abd  elixir-1.2.4.tar.gz"
-sha256sums="16759ff84d08b480b7e5499716e663b2fffd26e20cf2863de5613bc7bb05c817  elixir-1.2.4.tar.gz"
-sha512sums="57e2929f415de02eeeac5ea4784578957e355e6064860d1e1349e0a905729624dea71299fbc9db02287a22e9daf986f2cad501dec79fadaecdc2f338978205ae  elixir-1.2.4.tar.gz"
+md5sums="2f637bba4a3ae352a28754756aa0fcb5  elixir-1.2.6.tar.gz"
+sha256sums="2fd4ed9d7d8b4bd9f151cdaf6b39726d64d7cf756186a5c9454867514e5b0916  elixir-1.2.6.tar.gz"
+sha512sums="26016e7bf7b15194ce6236d6d44e530756ca9e9cf1d749f3bb77d7b0b3d0a3413034837d4cbd8410c3da8d87b7b751a36658c0544c8abbf92f269f6eaed9d7ac  elixir-1.2.6.tar.gz"

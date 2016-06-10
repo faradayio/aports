@@ -1,4 +1,6 @@
 #!/bin/sh
 
-adduser -S -h /var/lib/gogs -s /bin/ash -G www-data -D gogs 2>/dev/null || true
-passwd -u gogs || true
+adduser -S -D -h /var/lib/gogs -s /bin/ash -G www-data -g gogs gogs 2>/dev/null
+passwd -u gogs 2>/dev/null
+
+exit 0

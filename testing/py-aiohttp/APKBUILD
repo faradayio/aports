@@ -2,18 +2,18 @@
 # Maintainer: Francesco Colista <fcolista@alpinelinux.org>
 pkgname=py-aiohttp
 _pkgname=aiohttp
-pkgver=0.21.2
+pkgver=0.21.6
 pkgrel=0
 pkgdesc="HTTP client/server for asyncio"
 url="http://pypi.python.org/pypi/aiohttp"
 arch="all"
-license="APACHE"
+license="ASL 2.0"
 depends="python3 py-chardet"
 depends_dev=""
 makedepends="$depends_dev py-setuptools cython-dev python3-dev"
 install=""
 subpackages="$pkgname-dev"
-source="https://pypi.python.org/packages/source/a/$_pkgname/$_pkgname-$pkgver.tar.gz"
+source="https://pypi.io/packages/source/a/$_pkgname/$_pkgname-$pkgver.tar.gz"
 
 builddir="$srcdir"/$_pkgname-$pkgver
 build() {
@@ -26,6 +26,6 @@ package() {
 	python3 setup.py install --root="$pkgdir" --optimize=1 || return 1
 }
 
-md5sums="b53e5d6b3e5961b7119f2f500a20904e  aiohttp-0.21.2.tar.gz"
-sha256sums="991e574309815036ca36889a8917005bb795522acd2ba9cc870e07c260c092b5  aiohttp-0.21.2.tar.gz"
-sha512sums="282f249d94056e65615ec153713f99b34071344fc3effb15b376dc26e5db2b5cf189b07c4007e5b73e4e7fcbca7776a075778b778075fb9071fa8cc9dafb4746  aiohttp-0.21.2.tar.gz"
+md5sums="d7f63e51bc86a61d9bccca13986c3855  aiohttp-0.21.6.tar.gz"
+sha256sums="8709c6d4b7735705ef46e0d5416083f1e92d9a9ab18e2b4c7f7944e831b73428  aiohttp-0.21.6.tar.gz"
+sha512sums="622218ffbc163aefc04730bc9ca36f922182699407ea8fb6e8e5ce01b63e4bbee821e466f1701ecabf2f4c47bf840a572e7f3bcdf0903e8a87b23d5c3e07209b  aiohttp-0.21.6.tar.gz"
