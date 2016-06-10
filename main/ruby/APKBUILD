@@ -3,7 +3,7 @@
 pkgname=ruby
 pkgver=2.3.1
 _pkgver=${pkgver/_/-}
-pkgrel=0
+pkgrel=0.1
 
 _abi=2.3.0
 
